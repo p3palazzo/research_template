@@ -1,0 +1,16 @@
+to         : "beamer"
+standalone : true
+file-scope : true
+toc        : true
+default-image-extension: ".jpg"
+fail-if-warnings       : true
+variables:
+  aspectratio : 169
+  logo        :
+  titlegraphic:
+  theme       :
+  colortheme  :
+  fonttheme   :
+  innertheme  :
+  outertheme  :
+  navigation  : "empty"

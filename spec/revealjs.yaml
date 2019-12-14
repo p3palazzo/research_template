@@ -1,0 +1,15 @@
+to           : "revealjs"
+standalone   : true
+slide-level  : 2
+file-scope   : true
+filters:
+- pandoc-citeproc
+toc          : false
+resource-path:
+- .
+- fig
+default-image-extension: ".jpg"
+fail-if-warnings       : true
+variables:
+  revealjs-url  : "reveal.js"
+  theme         : "black"

@@ -1,0 +1,9 @@
+fail-if-warnings       : True
+filters:
+- pandoc-internalrefs
+- pandoc-citeproc
+default-image-extension: '.jpg'
+file-scope             : True
+resource-path:
+- .
+- fig

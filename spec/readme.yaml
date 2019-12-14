@@ -1,0 +1,9 @@
+to           : "html"
+standalone   : true
+output-file  : "docs/index.html"
+resource-path:
+- .
+- fig
+fail-if-warnings: true
+metadata:
+  title      : 
