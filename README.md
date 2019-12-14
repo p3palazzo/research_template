@@ -11,8 +11,9 @@ repositories. It comes preloaded with some useful stuff:
   styles](https://github.com/citation-style-language/styles) installed
   as a submodule in `spec/` for managing citations; styles than come
 - A `.gitignore` file for LaTeX and Jekyll (the latter being used for
-  GitHub pages) as well as providing an ignored folder where I store
-  generated PDFs and Word files;
+  GitHub pages) using GitHub's [gitignore
+  templates](https://github.com/github/gitignore) as well as providing
+  an `_output` folder where I store generated PDFs and Word files;
 - GitHub pages set up to use `docs/` on the Master branch;
 - [Reveal.js](https://revealjs.com/) installed as a submodule in
   `docs/` for creating web-based slide presentations;
@@ -28,6 +29,17 @@ Markdown and using Pandoc to generate PDFs or Word documents. It works
 nicely in conjunction with an Open Science Framework project. I have
 tried to keep it simple and avoid feature bloat. Feel free to share
 your favorite starter setup with me on Twitter.
+
+Usage
+-----
+
+Click on the "Use this template" button above the file list and see
+further instructions on the page [Creating a repository from a
+template](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
+on GitHub's Help documentation.
+
+You may also fork this repository to create your own template, or
+contribute features to this one.
 
 License
 -------
