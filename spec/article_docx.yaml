@@ -1,0 +1,17 @@
+filters:
+- pandoc-internalrefs
+- pandoc-citeproc
+fail-if-warnings       : True
+file-scope             : True
+standalone             : True
+default-image-extension: '.jpg'
+from                   : 'markdown'
+to                     : 'docx'
+table-of-contents      : False
+number-sections        : False
+csl                    : 'http://raw.githubusercontent.com/citation-style-language/styles/master/chicago-fullnote-bibliography-with-ibid.csl'
+bibliography           : 'biblio.bib'
+suppress-bibliography  : False
+resource-path:
+- .
+- fig
