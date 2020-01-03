@@ -9,7 +9,7 @@ from                   : 'markdown'
 to                     : 'docx'
 table-of-contents      : False
 number-sections        : False
-csl                    : 'http://raw.githubusercontent.com/citation-style-language/styles/master/chicago-fullnote-bibliography-with-ibid.csl'
+csl                    : 'spec/styles/chicago-fullnote-bibliography-with-ibid.csl'
 bibliography           : 'biblio.bib'
 suppress-bibliography  : False
 resource-path:

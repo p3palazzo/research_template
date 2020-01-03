@@ -33,10 +33,12 @@ your favorite starter setup with me on Twitter.
 Usage
 -----
 
-Click on the "Use this template" button above the file list and see
-further instructions on the page [Creating a repository from a
-template](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
-on GitHub's Help documentation.
+- Click on the "Use this template" button above the file list and see
+  further instructions on the page [Creating a repository from a
+  template](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
+  on GitHub's Help documentation.
+- After checking out the repository, remember to checkout all
+  submodules.
 
 You may also fork this repository to create your own template, or
 contribute features to this one.
