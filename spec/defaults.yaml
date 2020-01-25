@@ -1,9 +1,9 @@
-fail-if-warnings        : True
 filters:
 - pandoc-xnos
 - pandoc-citeproc
-default-image-extension : '.jpg'
+fail-if-warnings        : True
 file-scope              : True
+default-image-extension : '.jpg'
 resource-path:
 - .
 - fig
