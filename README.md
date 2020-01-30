@@ -40,6 +40,12 @@ Usage
 - After checking out the repository, remember to checkout all
   submodules.
 
+Some Pandoc defaults files call the
+[Pandoc-xnos](https://github.com/tomduck/pandoc-xnos) filter; install it
+before running the export or remove the line that references it. I suggest
+installing the filters in an environment so they don't have a chance of
+conflicting with anything else you might have running.
+
 You may also fork this repository to create your own template, or
 contribute features to this one.
 
