@@ -1,0 +1,20 @@
+filters:
+- pandoc-xnos
+- pandoc-citeproc
+fail-if-warnings       : True
+file-scope             : True
+standalone             : True
+from                   : 'markdown'
+to                     : 'odt'
+default-image-extension: '.jpg'
+table-of-contents      : False
+number-sections        : False # not supported in the ODT writer.
+metadata:
+  bibliography         : 'biblio.bib'
+  csl                  : 'spec/styles/chicago-fullnote-with-ibid.csl'
+  bibliography-title   : 'References'
+resource-path:
+- .
+- fig
+reference-doc          : 
+template               : 
