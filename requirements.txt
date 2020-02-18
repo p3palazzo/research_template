@@ -1,5 +1,6 @@
+lice==0.6
 pandoc-eqnos==2.1.1
-pandoc-fignos==2.2.0
+-e git+git@github.com:tomduck/pandoc-fignos.git@32317be38635fb4c82d91cc2c5cddf37481ac40c#egg=pandoc_fignos
 pandoc-secnos==2.1.1
 pandoc-tablenos==2.1.1
 pandoc-xnos==2.3.0
