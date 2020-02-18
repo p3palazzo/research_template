@@ -42,9 +42,8 @@ Usage
 
 Some Pandoc defaults files call the
 [Pandoc-xnos](https://github.com/tomduck/pandoc-xnos) filter; install it
-before running the export or remove the line that references it. I suggest
-installing the filters in an environment so they don't have a chance of
-conflicting with anything else you might have running.
+by creating a Python Virtual Environment using the included
+`requirements.txt`.
 
 You may also fork this repository to create your own template, or
 contribute features to this one.
@@ -58,13 +57,16 @@ meaning you can do whatever you like with your fork of it, and I
 provide no guarantee whatsoever that it will not cause your house to
 burst up in flames or other unintended side effects.
 
-The Citations Styles Language Styles belong to
-[CitationStyles.org](http://citationstyles.org/) and are licensed
-under the [Creative Commons Attribution-ShareAlike 3.0 Unported
-license](http://creativecommons.org/licenses/by-sa/3.0/). The
-Reveal.js framework is Copyright (C) 2019 Hakim El Hattab,
-http://hakim.se, and is licensed under the [MIT
-License](https://raw.githubusercontent.com/licenses/license-templates/master/templates/mit.txt).
-I am not affiliated in any way with any of the organizations or people
-whose software I have included here.
+- The Citations Styles Language Styles belong to
+  [CitationStyles.org](http://citationstyles.org/) and are licensed
+  under the [Creative Commons Attribution-ShareAlike 3.0 Unported
+  license](http://creativecommons.org/licenses/by-sa/3.0/). The
+- Reveal.js framework is Copyright (C) 2019 Hakim El Hattab,
+  http://hakim.se, and is licensed under the [MIT
+  License](https://raw.githubusercontent.com/licenses/license-templates/master/templates/mit.txt).
+- [Pandoc-Xnos](https://github.com/tomduck/pandoc-xnos) is licensed by
+  Thomas G. Duck under the
+  [GPL v3](https://raw.githubusercontent.com/licenses/license-templates/master/templates/gpl3.txt).
+- I am not affiliated in any way with any of the organizations or people
+  whose software I have included here.
 
