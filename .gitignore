@@ -1,13 +1,32 @@
-## Generated binary files (PDF, Word, etc.) go here
-_output
+# vim: set foldmethod=marker :
+########################################################################
+# This file is a compilation of some among the most common ignores
+# needed for scientists producing texts in a number of formats (LaTeX,
+# Word, Excel, etc.), PDF files, and working with stuff such as Python
+# and R. As a bonus, there are some standard ignore patterns for Windows
+# and Mac.
 
-## Jekyll
+# Generated binary files (PDF, Word, etc.) go here {{{1
+## Book build output
+_book
+
+# For when you want to keep downloaded or received files next to your
+# repo without committing them (bc they're usually binaries).
+_share
+
+# Jekyll {{{1
 _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
 
-## Core latex/pdflatex auxiliary files:
+# eBook build output {{{1
+*.epub
+*.mobi
+*.pdf
+
+# LaTeX {{{ 1
+## Core latex/pdflatex auxiliary files: {{{2
 *.aux
 *.lof
 *.log
@@ -21,7 +40,7 @@ _site/
 *.cb2
 .*.lb
 
-## Intermediate documents:
+## Intermediate documents: {{{2
 *.dvi
 *.xdv
 *-converted-to.*
@@ -33,7 +52,7 @@ _site/
 ## Generated if empty string is given at "Please type another file name for output:"
 .pdf
 
-## Bibliography auxiliary files (bibtex/biblatex/biber):
+## Bibliography auxiliary files (bibtex/biblatex/biber): {{{2
 *.bbl
 *.bcf
 *.blg
@@ -41,7 +60,7 @@ _site/
 *-blx.bib
 *.run.xml
 
-## Build tool auxiliary files:
+## Build tool auxiliary files: {{{2
 *.fdb_latexmk
 *.synctex
 *.synctex(busy)
@@ -49,46 +68,46 @@ _site/
 *.synctex.gz(busy)
 *.pdfsync
 
-## Auxiliary and intermediate files from other packages:
-# algorithms
+## Auxiliary and intermediate files from other packages: {{{2
+### algorithms
 *.alg
 *.loa
 
-# achemso
+### achemso
 acs-*.bib
 
-# amsthm
+### amsthm
 *.thm
 
-# beamer
+### beamer
 *.nav
 *.pre
 *.snm
 *.vrb
 
-# changes
+### changes
 *.soc
 
-# cprotect
+### cprotect
 *.cpt
 
-# elsarticle (documentclass of Elsevier journals)
+### elsarticle (documentclass of Elsevier journals)
 *.spl
 
-# endnotes
+### endnotes
 *.ent
 
-# fixme
+### fixme
 *.lox
 
-# feynmf/feynmp
+### feynmf/feynmp
 *.mf
 *.mp
 *.t[1-9]
 *.t[1-9][0-9]
 *.tfm
 
-#(r)(e)ledmac/(r)(e)ledpar
+###(r)(e)ledmac/(r)(e)ledpar
 *.end
 *.?end
 *.[1-9]
@@ -104,7 +123,7 @@ acs-*.bib
 *.eledsec[1-9][0-9][0-9]
 *.eledsec[1-9][0-9][0-9]R
 
-# glossaries
+### glossaries
 *.acn
 *.acr
 *.glg
@@ -112,14 +131,14 @@ acs-*.bib
 *.gls
 *.glsdefs
 
-# gnuplottex
+### gnuplottex
 *-gnuplottex-*
 
-# gregoriotex
+### gregoriotex
 *.gaux
 *.gtex
 
-# htlatex
+### htlatex
 *.4ct
 *.4tc
 *.idv
@@ -127,25 +146,25 @@ acs-*.bib
 *.trc
 *.xref
 
-# hyperref
+### hyperref
 *.brf
 
-# knitr
+### knitr
 *-concordance.tex
 # TODO Comment the next line if you want to keep your tikz graphics files
 *.tikz
 *-tikzDictionary
 
-# listings
+### listings
 *.lol
 
-# makeidx
+### makeidx
 *.idx
 *.ilg
 *.ind
 *.ist
 
-# minitoc
+### minitoc
 *.maf
 *.mlf
 *.mlt
@@ -154,90 +173,90 @@ acs-*.bib
 *.slt[0-9]*
 *.stc[0-9]*
 
-# minted
+### minted
 _minted*
 *.pyg
 
-# morewrites
+### morewrites
 *.mw
 
-# nomencl
+### nomencl
 *.nlg
 *.nlo
 *.nls
 
-# pax
+### pax
 *.pax
 
-# pdfpcnotes
+### pdfpcnotes
 *.pdfpc
 
-# sagetex
+### sagetex
 *.sagetex.sage
 *.sagetex.py
 *.sagetex.scmd
 
-# scrwfile
+### scrwfile
 *.wrt
 
-# sympy
+### sympy
 *.sout
 *.sympy
 sympy-plots-for-*.tex/
 
-# pdfcomment
+### pdfcomment
 *.upa
 *.upb
 
-# pythontex
+### pythontex
 *.pytxcode
 pythontex-files-*/
 
-# thmtools
+### thmtools
 *.loe
 
-# TikZ & PGF
+### TikZ & PGF
 *.dpth
 *.md5
 *.auxlock
 
-# todonotes
+### todonotes
 *.tdo
 
-# easy-todo
+### easy-todo
 *.lod
 
-# xmpincl
+### xmpincl
 *.xmpi
 
-# xindy
+### xindy
 *.xdy
 
-# xypic precompiled matrices
+### xypic precompiled matrices
 *.xyc
 
-# endfloat
+### endfloat
 *.ttt
 *.fff
 
-# Latexian
+### Latexian
 TSWLatexianTemp*
 
-## Editors:
-# WinEdt
+## Editors: {{{2
+### WinEdt
 *.bak
 *.sav
 
-# Texpad
+### Texpad
 .texpadtmp
 
-# Kile
+### Kile
 *.backup
 
-# KBibTeX
+### KBibTeX
 *~[0-9]*
 
-# auto folder when using emacs and auctex
+## auto folder when using emacs and auctex {{{2
 ./auto/*
 *.el
 
@@ -250,8 +269,7 @@ TSWLatexianTemp*
 # generated if using elsarticle.cls
 *.spl
 
-# From https://github.com/github/gitignore
-
+# Word processors and other binary cruft {{{1
 # LibreOffice locks
 .~lock.*#
 *.tmp
@@ -271,6 +289,16 @@ Backup of *.doc*
 # PowerPoint temporary
 ~$*.ppt*
 
+# Node rules: {{{1
+## Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+## Dependency directory
+## Commenting this out is preferred by some people, see
+## https://docs.npmjs.com/misc/faq#should-i-check-my-node_modules-folder-into-git
+node_modules
+
+# Windows {{{1
 # Temporary
 .netrwhist
 *~
@@ -293,7 +321,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# MacOS
+# MacOS {{{1
 .DS_Store
 .AppleDouble
 .LSOverride
@@ -320,16 +348,16 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# Python
-# Byte-compiled / optimized / DLL files
+# Python {{{1
+# Byte-compiled / optimized / DLL files {{{2
 __pycache__/
 *.py[cod]
 *$py.class
 
-# C extensions
+# C extensions {{{2
 *.so
 
-# Distribution / packaging
+# Distribution / packaging {{{2
 .Python
 build/
 develop-eggs/
@@ -350,7 +378,7 @@ share/python-wheels/
 *.egg
 MANIFEST
 
-# PyInstaller
+# PyInstaller {{{2
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
@@ -360,7 +388,7 @@ MANIFEST
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Unit test / coverage reports
+# Unit test / coverage reports {{{2
 htmlcov/
 .tox/
 .nox/
@@ -374,37 +402,37 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 
-# Translations
+# Translations {{{2
 *.mo
 *.pot
 
-# Django stuff:
+# Django stuff: {{{2
 *.log
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
 
-# Flask stuff:
+# Flask stuff: {{{2
 instance/
 .webassets-cache
 
-# Scrapy stuff:
+# Scrapy stuff: {{{2
 .scrapy
 
-# Sphinx documentation
+# Sphinx documentation {{{2
 docs/_build/
 
-# PyBuilder
+# PyBuilder {{{2
 target/
 
-# Jupyter Notebook
+# Jupyter Notebook {{{2
 .ipynb_checkpoints
 
-# IPython
+# IPython {{{2
 profile_default/
 ipython_config.py
 
-# pyenv
+# pyenv {{{2
 #   For a library or package, you might want to ignore these files since the code is
 #   intended to run in multiple environments; otherwise, check them in:
 .python-version
@@ -416,17 +444,17 @@ ipython_config.py
 #   install all needed dependencies.
 #Pipfile.lock
 
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow {{{2
 __pypackages__/
 
-# Celery stuff
+# Celery stuff {{{2
 celerybeat-schedule
 celerybeat.pid
 
-# SageMath parsed files
+# SageMath parsed files {{{2
 *.sage.py
 
-# Environments
+# Environments {{{2
 .env
 .venv
 env/
@@ -435,23 +463,65 @@ ENV/
 env.bak/
 venv.bak/
 
-# Spyder project settings
+# Spyder project settings {{{2
 .spyderproject
 .spyproject
 
-# Rope project settings
+# Rope project settings {{{2
 .ropeproject
 
-# mkdocs documentation
+# mkdocs documentation {{{2
 /site
 
-# mypy
+# mypy {{{2
 .mypy_cache/
 .dmypy.json
 dmypy.json
 
-# Pyre type checker
+# Pyre type checker {{{2
 .pyre/
 
-# pytype static type analyzer
+# pytype static type analyzer {{{2
 .pytype/
+
+# R {{{1
+## History files
+.Rhistory
+.Rapp.history
+
+## Session Data files
+.RData
+
+## User-specific files
+.Ruserdata
+
+## Example code in package build process
+*-Ex.R
+
+## Output files from R CMD build
+/*.tar.gz
+
+## Output files from R CMD check
+/*.Rcheck/
+
+## RStudio files
+.Rproj.user/
+
+## produced vignettes
+vignettes/*.html
+vignettes/*.pdf
+
+## OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
+.httr-oauth
+
+## knitr and R markdown default cache directories
+*_cache/
+/cache/
+
+## Temporary files created by R markdown
+*.utf8.md
+*.knit.md
+
+## R Environment Variables
+.Renviron
+
