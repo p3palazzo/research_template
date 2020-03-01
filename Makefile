@@ -13,7 +13,7 @@ vpath default.% lib/pandoc-templates
 # ===================
 # `make install` copies various config files and hooks to the .git
 # directory and sets up standard empty directories.
-.PHONY : install
+.PHONY : install clean
 install :
 	-mkdir _share
 	-mkdir fig
@@ -23,7 +23,6 @@ install :
 # `make clean` will clear out a few standard folders where only compiled
 # files should be. Anything you might have placed manually in them will
 # also be deleted!
-.PHONY : clean
 clean :
 	-rm -r _book/* _site/*
 
