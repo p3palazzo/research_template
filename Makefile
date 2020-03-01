@@ -16,9 +16,12 @@ vpath default.% lib/pandoc-templates
 .PHONY : install clean
 install :
 	-mkdir _share
+	-mkdir _book
 	-mkdir fig
 	rsync -aq .install/ .git/
 	git submodule update --init
+	cd lib/styles && git config core.sparsecheckout true && \
+		git read-tree -m -u HEAD
 
 # `make clean` will clear out a few standard folders where only compiled
 # files should be. Anything you might have placed manually in them will
