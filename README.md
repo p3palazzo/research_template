@@ -43,13 +43,14 @@ Usage
   expect you have `rsync` and Python 3 with `pip` installed).
 - **Caution:** by default, only the `chicago-author-date.csl` style is
   checked out. Edit `.install/modules/lib/styles/info/sparse-checkout`
-  **before** running `make install` if you want to add other citation
+  and run `make submodule` at any time if you want to add other citation
   styles.
-- Citation styles are updated frequently; use `git submodule update
-  --remote` to keep up-to-date with the latest revisions.
+- Citation styles are updated frequently; `cd lib/styles && git
+  submodule update --remote` frequently to keep up-to-date with the
+  latest revisions.
 
-You may also fork this repository to create your own template, or
-contribute features to this one.
+You may also want to fork this repository to create your own template,
+or contribute features to this one.
 
 License
 -------
