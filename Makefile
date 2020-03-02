@@ -36,7 +36,7 @@ submodule :
 virtualenv :
 	python3 -m virtualenv .venv && source .venv/bin/activate && \
 		pip3 install -r .install/requirements.txt
-	rm -rf src
+	-rm -rf src
 
 # `make clean` will clear out a few standard folders where only compiled
 # files should be. Anything you might have placed manually in them will
