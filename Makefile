@@ -22,6 +22,7 @@ install :
 	rsync -aq .install/ .git/
 	cd lib/styles && git config core.sparsecheckout true && \
 		git read-tree -m -u HEAD
+	rm -rf .install
 
 # `make clean` will clear out a few standard folders where only compiled
 # files should be. Anything you might have placed manually in them will
