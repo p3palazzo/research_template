@@ -9,14 +9,14 @@ repositories. It comes preloaded with some useful stuff:
 
 - Citation Style Language [citation
   styles](https://github.com/citation-style-language/styles) installed
-  as a submodule in `spec/` for managing citations; styles than come
-- A `.gitignore` file for LaTeX and Jekyll (the latter being used for
-  GitHub pages) using GitHub's [gitignore
+  as a submodule in `lib/` for managing citations;
+- A `.gitignore` file for LaTeX, Jekyll (for GitHub pages), Python, and
+  R, using GitHub's [gitignore
   templates](https://github.com/github/gitignore) as well as providing
   an `_output` folder where I store generated PDFs and Word files;
 - GitHub pages set up to use `docs/` on the Master branch;
 - [Reveal.js](https://revealjs.com/) installed as a submodule in
-  `docs/` for creating web-based slide presentations;
+  `docs/` for creating web based slide presentations;
 - A preconfigured `_config.yml` for Jekyll so it does not try to mess
   with you Reveal.js installation or to generate a web page from the
   README (there is a set of default options for using Pandoc to
@@ -37,8 +37,14 @@ Usage
   further instructions on the page [Creating a repository from a
   template](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
   on GitHub's Help documentation.
-- After checking out the repository, remember to checkout all
-  submodules.
+- After checking out the repository, use `make install` to set up
+  submodules (I expect you have `rsync` installed).
+- **Caution:** by default, only the `chicago-author-date.csl` style is
+  checked out. Edit `.install/modules/lib/styles/info/sparse-checkout`
+  **before** running `make install` if you want to add other citation
+  styles.
+- Citation styles are updated frequently; use `git submodule update
+  --remote` to keep up-to-date with the latest revisions.
 
 Some Pandoc defaults files call the
 [Pandoc-xnos](https://github.com/tomduck/pandoc-xnos) filter; install it
