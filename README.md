@@ -23,6 +23,7 @@ repositories. It comes preloaded with some useful stuff:
   generate `docs/index.html` from the README, see below);
 - Preconfigured defaults for generating documents with
   [Pandoc](http://pandoc.org), in the `spec` folder.
+- [Pandoc-xnos](https://github.com/tomduck/pandoc-xnos) filter.
 
 This is the general setup I use to start a research project writing in
 Markdown and using Pandoc to generate PDFs or Word documents. It works
@@ -38,18 +39,14 @@ Usage
   template](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
   on GitHub's Help documentation.
 - After checking out the repository, use `make install` to set up
-  submodules (I expect you have `rsync` installed).
+  submodules and the virtual environment with the Pandoc-xnos filter (I
+  expect you have `rsync` and Python 3 with `pip` installed).
 - **Caution:** by default, only the `chicago-author-date.csl` style is
   checked out. Edit `.install/modules/lib/styles/info/sparse-checkout`
   **before** running `make install` if you want to add other citation
   styles.
 - Citation styles are updated frequently; use `git submodule update
   --remote` to keep up-to-date with the latest revisions.
-
-Some Pandoc defaults files call the
-[Pandoc-xnos](https://github.com/tomduck/pandoc-xnos) filter; install it
-by creating a Python Virtual Environment using the included
-`requirements.txt`.
 
 You may also fork this repository to create your own template, or
 contribute features to this one.
