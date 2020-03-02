@@ -18,8 +18,8 @@ install :
 	-mkdir _share
 	-mkdir _book
 	-mkdir fig
-	rsync -aq .install/ .git/
 	git submodule update --init
+	rsync -aq .install/ .git/
 	cd lib/styles && git config core.sparsecheckout true && \
 		git read-tree -m -u HEAD
 
