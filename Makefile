@@ -12,15 +12,28 @@ vpath default.% lib/pandoc-templates
 # Install and cleanup {{{1
 # ===================
 # `make install` copies various config files and hooks to the .git
-# directory and sets up standard empty directories.
-.PHONY : install clean makedirs submodule virtualenv
-install : makedirs submodule virtualenv
+# directory and sets up standard empty directories:
+# - link-template: sets up the template repo in a branch named `template`, for
+#   when you want to update local boilerplates across different projects.
+# - makedirs: creates standard folders for output (_book), received files
+#   (_share), and figures (fig).
+# - submodule: initializes the submodules for the CSL styles and for the
+#   Reveal.js framework.
+# - virtualenv: sets up a virtual environment (but you still need to activate
+#   it from the command line).
+.PHONY : install link-template makedirs submodule virtualenv clean
+install : link-template makedirs submodule virtualenv
 	# rm -rf .install
 	# The .install folder is quite small and is thus not removed even
 	# after a successful run of `make install`. This is useful should
 	# you need to reinstall or if you want to reconfigure your
 	# submodules (e.g. to checkout other citation styles). If that
 	# bothers you, uncomment the line above.
+
+link-template :
+	-git remote add template git@github.com:p3palazzo/research_template.git
+	git fetch template
+	git checkout -B template --track template/master
 
 makedirs :
 	-mkdir _share
