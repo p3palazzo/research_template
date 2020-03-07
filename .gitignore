@@ -19,6 +19,7 @@ _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+.vendor # Local path for bundler install without admin rights
 
 # eBook build output {{{1
 *.epub
