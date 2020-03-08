@@ -43,18 +43,24 @@ Usage
   template](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
   on GitHub's Help documentation.
 - After checking out the repository, use `make install` to set up
-  submodules and the virtual environment with the Pandoc-xnos filter (I
-  expect you have `rsync` and Python 3 with `pip` installed).
-- **Caution:** by default, only the `chicago-author-date.csl` style is
+  submodules and the virtual environment with the `Pandoc-xnos` filter
+  (I expect you have `rsync` and Python 3 with `pip` installed).
+- :warning: by default, only the `chicago-author-date.csl` style is
   checked out. Edit `.install/modules/lib/styles/info/sparse-checkout`
   and run `make submodule` at any time if you want to add other citation
   styles.
-- Citation styles are updated frequently; `cd lib/styles && git
-  submodule update --remote` frequently to keep up-to-date with the
-  latest revisions.
+- Citation styles are updated frequently; run `make submodule`
+  often to keep up-to-date with the latest revisions.
 
 You may also want to fork this repository to create your own template,
 or contribute features to this one.
+
+A word of caution: if you have several repositories based on this
+template, you might not want to replicate the virtual environment on
+every one of them, but rather invoke it from a single location, to save
+a little disk space. If this is the case, do not run `make install` but
+instead pick the `make` targets you need individually (inspect the
+Makefile to find out which ones).
 
 License
 -------
