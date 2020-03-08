@@ -50,11 +50,14 @@ exclude:
   - spec/
   - Gemfile
   - Gemfile.lock
+  - LICENSE
+  - Makefile
+  - .vendor/bundle/
+  - .bundle/
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
 #   - node_modules/
-#   - vendor/bundle/
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
