@@ -21,7 +21,7 @@ vpath default.% lib/pandoc-templates
 #   Reveal.js framework.
 # - virtualenv: sets up a virtual environment (but you still need to activate
 #   it from the command line).
-.PHONY : install link-template makedirs submodule virtualenv bundle serve clean
+.PHONY : install link-template makedirs submodule virtualenv bundle serve build clean
 install : link-template makedirs submodule virtualenv bundle
 	# rm -rf .install
 	# The .install folder is quite small and is thus not removed even
@@ -58,6 +58,10 @@ bundle :
 
 serve :
 	bundle exec jekyll serve
+
+build :
+	bundle exec jekyll build
+	cp -r _site/* docs/
 
 # `make clean` will clear out a few standard folders where only compiled
 # files should be. Anything you might have placed manually in them will
