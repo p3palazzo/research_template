@@ -31,6 +31,10 @@ nicely in conjunction with an Open Science Framework project. I have
 tried to keep it simple and avoid feature bloat. Feel free to share
 your favorite starter setup with me on Twitter.
 
+:warning: For now, the makefile is set up to work only on Linux/Mac
+because it invokes shell commands. Help is appreciated in converting it
+to Python for cross-platform support.
+
 Usage
 -----
 
