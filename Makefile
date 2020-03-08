@@ -52,8 +52,9 @@ virtualenv :
 	-rm -rf src
 
 bundle :
-	bundle install --path .vendor/bundle
-	# Remove the --path setting if you want to install gems system-wide.
+	bundle config set path '.vendor/bundle'
+	# Remove the line above if you want to install gems system-wide.
+	bundle install
 
 serve :
 	bundle exec jekyll serve
