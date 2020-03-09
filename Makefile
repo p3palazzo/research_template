@@ -34,6 +34,7 @@ link-template :
 	-git remote add template git@github.com:p3palazzo/research_template.git
 	git fetch template
 	git checkout -B template --track template/master
+	git checkout -
 
 makedirs :
 	-mkdir _share
