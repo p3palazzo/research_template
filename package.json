@@ -1,0 +1,13 @@
+{
+  "name": "@p3palazzo/p3palazzo.github.io",
+  "version": "1.0.0",
+  "description": "Pedro P. Palazzo : Site profissional",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Pedro P. Palazzo",
+  "license": "CC-BY",
+  }
+}
