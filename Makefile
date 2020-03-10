@@ -2,6 +2,7 @@
 # ================
 # Where make should look for things
 VPATH = lib
+vpath %.csl lib/styles
 vpath %.yaml .:spec
 vpath default.% lib/pandoc-templates
 
