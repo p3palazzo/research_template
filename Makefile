@@ -23,18 +23,15 @@ vpath default.% lib/pandoc-templates
 # - virtualenv: sets up a virtual environment (but you still need to activate
 #   it from the command line).
 .PHONY : install link-template makedirs submodule virtualenv bundle serve build clean
-install : link-template makedirs submodule virtualenv bundle
-	# rm -rf .install
-	# The .install folder is quite small and is thus not removed even
-	# after a successful run of `make install`. This is useful should
-	# you need to reinstall or if you want to reconfigure your
-	# submodules (e.g. to checkout other citation styles). If that
-	# bothers you, uncomment the line above.
+install : link-template makedirs submodule virtualenv bundle license
+	# If you reached this message, installation was successful, even if
+	# you see some errors above. Inspect them to see if there are any
+	# errors that affect the features of this template and, if this is
+	# the case, please report them by opening an issue at
+	# https://github.com/p3palazzo/research_template/issues/.
 
 makedirs :
-	-mkdir _share
-	-mkdir _book
-	-mkdir fig
+	-mkdir _share && mkdir _book && mkdir fig
 
 submodule : link-template
 	git checkout template
@@ -82,6 +79,11 @@ serve :
 build :
 	bundle exec jekyll build
 	cp -r _site/* docs/
+
+license :
+	source .venv/bin/activate && \
+		lice --header cc_by_sa >> README.md && \
+		lice cc_by_sa -f LICENSE
 
 # `make clean` will clear out a few standard folders where only compiled
 # files should be. Anything you might have placed manually in them will

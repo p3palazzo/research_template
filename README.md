@@ -24,8 +24,9 @@ repositories. It comes preloaded with some useful stuff:
   [Pandoc](http://pandoc.org), in the `spec` folder;
 - [Pandoc-xnos](https://github.com/tomduck/pandoc-xnos) filter running
   inside a virtual environment;
-- [Lice](https://github.com/licenses/lice) to generate your license,
-  also in the virtual environment;
+- [Lice](https://github.com/licenses/lice) to generate your license
+  (Creative Commons attribution--share-alike by default), also in the
+  virtual environment;
 - A [Makefile](https://www.gnu.org/software/make/) to set up all of the
   above with some sensible defaults (inspect the file to find out what
   they are and change as needed).
