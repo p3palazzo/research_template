@@ -47,12 +47,21 @@ submodule : link-template
 		git read-tree -m -u HEAD
 
 link-template :
-	-git remote add template git@github.com:p3palazzo/research_template.git
+	# Generating a repo from a GitHub template breaks the submodules.
+	# As a workaround, we create a branch that clones directly from the
+	# template repo, activate the submodules there, then merge it into
+	# whatever branch was previously active (the master branch if your
+	# repo has just been initialized).
+	-git remote add template
+	git@github.com:p3palazzo/research_template.git
 	git fetch template
 	git checkout -B template --track template/master
 	git checkout -
 
 virtualenv :
+	# Mac/Homebrew Python requires the recipe below to be instead:
+	# python3 -m virtualenv ...
+	# pip3 instal ...
 	python -m venv .venv && source .venv/bin/activate && \
 		pip install -r .install/requirements.txt
 	-rm -rf src
