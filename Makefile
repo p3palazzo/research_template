@@ -34,6 +34,7 @@ link-template :
 	-git remote add template git@github.com:p3palazzo/research_template.git
 	git fetch template
 	git checkout -B template --track template/master
+	git checkout -
 
 makedirs :
 	-mkdir _share
@@ -52,7 +53,7 @@ virtualenv :
 	-rm -rf src
 
 bundle :
-	bundle config set path '.vendor/bundle'
+	bundle config set path 'vendor/bundle'
 	# Remove the line above if you want to install gems system-wide.
 	bundle install
 
