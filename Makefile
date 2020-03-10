@@ -50,8 +50,7 @@ link-template :
 	# template repo, activate the submodules there, then merge it into
 	# whatever branch was previously active (the master branch if your
 	# repo has just been initialized).
-	-git remote add template
-	git@github.com:p3palazzo/research_template.git
+	-git remote add template git@github.com:p3palazzo/research_template.git
 	git fetch template
 	git checkout -B template --track template/master
 	git checkout -
@@ -67,6 +66,7 @@ virtualenv :
 bundle :
 	bundle config set path '.vendor/bundle'
 	# Remove the line above if you want to install gems system-wide.
+	# (This requires sudo)
 	# The config set path is effectively ignored by bundle in favor of
 	# the global path setting. My global config at ~/.bundle, however,
 	# is itself overridden by the built-in bundle path setting, which
