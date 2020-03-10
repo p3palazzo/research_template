@@ -1,6 +1,6 @@
 lice==0.6
 pandoc-eqnos==2.1.1
--e git+git@github.com:ValiValpas/pandoc-fignos.git@9e68b1675a0a58ac00c132779b2d6648eed51cab#egg=pandoc_fignos
+-e https://github.com/ValiValpas/pandoc-fignos.git@9e68b1675a0a58ac00c132779b2d6648eed51cab#egg=pandoc_fignos
 pandoc-secnos==2.1.1
 pandoc-tablenos==2.1.1
 pandoc-xnos==2.3.0
