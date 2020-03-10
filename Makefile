@@ -53,7 +53,7 @@ virtualenv :
 	-rm -rf src
 
 bundle :
-	bundle config set path 'vendor/bundle'
+	bundle config set path '.vendor/bundle'
 	# Remove the line above if you want to install gems system-wide.
 	bundle install
 
