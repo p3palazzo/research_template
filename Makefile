@@ -30,31 +30,40 @@ install : link-template makedirs submodule virtualenv bundle
 	# submodules (e.g. to checkout other citation styles). If that
 	# bothers you, uncomment the line above.
 
+makedirs :
+	-mkdir _share
+	-mkdir _book
+	-mkdir fig
+
+submodule : link-template
+	git checkout template
+	git pull
+	-git submodule init
+	git submodule update
+	git checkout -
+	git merge template --allow-unrelated-histories
+	rsync -aq .install/git/ .git/
+	cd lib/styles && git config core.sparsecheckout true && \
+		git read-tree -m -u HEAD
+
 link-template :
 	-git remote add template git@github.com:p3palazzo/research_template.git
 	git fetch template
 	git checkout -B template --track template/master
 	git checkout -
 
-makedirs :
-	-mkdir _share
-	-mkdir _book
-	-mkdir fig
-
-submodule :
-	git submodule update --init
-	rsync -aq .install/git/ .git/
-	cd lib/styles && git config core.sparsecheckout true && \
-		git read-tree -m -u HEAD
-
 virtualenv :
-	python3 -m virtualenv .venv && source .venv/bin/activate && \
-		pip3 install -r .install/requirements.txt
+	python -m venv .venv && source .venv/bin/activate && \
+		pip install -r .install/requirements.txt
 	-rm -rf src
 
 bundle :
 	bundle config set path '.vendor/bundle'
 	# Remove the line above if you want to install gems system-wide.
+	# The config set path is effectively ignored by bundle in favor of
+	# the global path setting. My global config at ~/.bundle, however,
+	# is itself overridden by the built-in bundle path setting, which
+	# is `.vendor`. Can't seem to be able to change this in any way.
 	bundle install
 
 serve :
