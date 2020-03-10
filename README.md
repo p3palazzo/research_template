@@ -12,9 +12,8 @@ repositories. It comes preloaded with some useful stuff:
   as a submodule in `lib/` for managing citations;
 - A `.gitignore` file for LaTeX, Jekyll (for GitHub pages), Python, and
   R, using GitHub's [gitignore
-  templates](https://github.com/github/gitignore) as well as providing
-  an `_output` folder where I store generated PDFs and Word files;
-- GitHub pages set up to use `docs/` on the Master branch;
+  templates](https://github.com/github/gitignore);
+- GitHub pages should be set up to use `docs/` on the Master branch;
 - [Reveal.js](https://revealjs.com/) installed as a submodule in
   `docs/` for creating web based slide presentations;
 - A preconfigured `_config.yml` for Jekyll so it does not try to mess
@@ -22,8 +21,14 @@ repositories. It comes preloaded with some useful stuff:
   README (there is a set of default options for using Pandoc to
   generate `docs/index.html` from the README, see below);
 - Preconfigured defaults for generating documents with
-  [Pandoc](http://pandoc.org), in the `spec` folder.
-- [Pandoc-xnos](https://github.com/tomduck/pandoc-xnos) filter.
+  [Pandoc](http://pandoc.org), in the `spec` folder;
+- [Pandoc-xnos](https://github.com/tomduck/pandoc-xnos) filter running
+  inside a virtual environment;
+- [Lice](https://github.com/licenses/lice) to generate your license,
+  also in the virtual environment;
+- A [Makefile](https://www.gnu.org/software/make/) to set up all of the
+  above with some sensible defaults (inspect the file to find out what
+  they are and change as needed).
 
 This is the general setup I use to start a research project writing in
 Markdown and using Pandoc to generate PDFs or Word documents. It works
@@ -41,26 +46,27 @@ Usage
 - Click on the "Use this template" button above the file list and see
   further instructions on the page [Creating a repository from a
   template](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
-  on GitHub's Help documentation.
+  on GitHub's Help documentation;
 - After checking out the repository, use `make install` to set up
-  submodules and the virtual environment with the `Pandoc-xnos` filter
-  (I expect you have `rsync` and Python 3 with `pip` installed).
-- :warning: by default, only the `chicago-author-date.csl` style is
-  checked out. Edit `.install/modules/lib/styles/info/sparse-checkout`
-  and run `make submodule` at any time if you want to add other citation
-  styles.
+  submodules and the virtual environment (I expect you have `rsync` and
+  Python 3 with `pip` installed);
 - Citation styles are updated frequently; run `make submodule`
   often to keep up-to-date with the latest revisions.
+
+:warning: By default, only the `chicago-author-date.csl` style is
+checked out. Edit `.install/modules/lib/styles/info/sparse-checkout` and
+run `make submodule` at any time if you want to add other citation
+styles.
 
 You may also want to fork this repository to create your own template,
 or contribute features to this one.
 
-A word of caution: if you have several repositories based on this
-template, you might not want to replicate the virtual environment on
-every one of them, but rather invoke it from a single location, to save
-a little disk space. If this is the case, do not run `make install` but
-instead pick the `make` targets you need individually (inspect the
-Makefile to find out which ones).
+Tip: if you have several repositories based on this template, you might
+not want to replicate the virtual environment on every one of them, but
+rather invoke it from a single location, to save a little disk space. If
+this is the case, do not run `make install` but instead pick the `make`
+targets you need individually (inspect the Makefile to find out which
+ones).
 
 License
 -------
