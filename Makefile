@@ -9,6 +9,12 @@ vpath default.% lib/pandoc-templates
 # Branch-specific targets and recipes {{{1
 # ===================================
 
+# Add prerequisites to the build target as needed or uncomment the PHONY
+# target below.
+# .PHONY : build
+build :
+	bundle exec jekyll build
+	mv _site/* docs/
 
 # Install and cleanup {{{1
 # ===================
@@ -22,7 +28,7 @@ vpath default.% lib/pandoc-templates
 #   Reveal.js framework.
 # - virtualenv: sets up a virtual environment (but you still need to activate
 #   it from the command line).
-.PHONY : install link-template makedirs submodule virtualenv bundle serve build clean
+.PHONY : install link-template makedirs submodule virtualenv bundle serve clean
 install : link-template makedirs submodule virtualenv bundle license
 	# If you reached this message, installation was successful, even if
 	# you see some errors above. Inspect them to see if there are any
@@ -75,10 +81,6 @@ bundle :
 
 serve :
 	bundle exec jekyll serve
-
-build :
-	bundle exec jekyll build
-	cp -r _site/* docs/
 
 license :
 	source .venv/bin/activate && \
