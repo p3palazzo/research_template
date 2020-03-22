@@ -29,7 +29,7 @@ build :
 # - virtualenv: sets up a virtual environment (but you still need to activate
 #   it from the command line).
 .PHONY : install link-template makedirs submodule virtualenv bundle serve clean
-install : link-template makedirs submodule virtualenv bundle license
+install : link-template makedirs submodule csl virtualenv bundle license
 	# If you reached this message, installation was successful, even if
 	# you see some errors above. Inspect them to see if there are any
 	# errors that affect the features of this template and, if this is
@@ -39,16 +39,19 @@ install : link-template makedirs submodule virtualenv bundle license
 makedirs :
 	-mkdir _share && mkdir _book && mkdir fig
 
-submodule : link-template
+csl : .install/git/modules/lib/styles/info/sparse-checkout
+	rsync -aq .install/git/ .git/
+	cd lib/styles && git config core.sparsecheckout true && \
+		git checkout master && git pull && \
+		git read-tree -m -u HEAD
+
+submodule_init : link-template
 	git checkout template
 	git pull
 	-git submodule init
 	git submodule update
 	git checkout -
 	git merge template --allow-unrelated-histories
-	rsync -aq .install/git/ .git/
-	cd lib/styles && git config core.sparsecheckout true && \
-		git read-tree -m -u HEAD
 
 link-template :
 	# Generating a repo from a GitHub template breaks the submodules.
