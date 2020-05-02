@@ -1,6 +1,0 @@
-[submodule "docs/reveal.js"]
-	path = docs/reveal.js
-	url = https://github.com/hakimel/reveal.js.git
-[submodule "lib/styles"]
-	path = lib/styles
-	url = https://github.com/citation-style-language/styles.git
