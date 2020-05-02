@@ -9,11 +9,16 @@ vpath default.% lib/pandoc-templates
 # Branch-specific targets and recipes {{{1
 # ===================================
 
-# Add prerequisites to the build target as needed or uncomment the PHONY
-# target below.
-# .PHONY : build
-build :
-	bundle exec jekyll build
+# Jekyll {{{2
+# ------
+SRC           = $(wildcard *.md)
+SITE         := $(patsubst %.md,docs/%.md, $(SRC))
+
+serve : $(SITE)
+	bundle exec jekyll serve 2>&1 | egrep -v 'deprecated'
+
+build : $(SRC)
+	bundle exec jekyll build 2>&1 | egrep -v 'deprecated'
 
 # Install and cleanup {{{1
 # ===================
@@ -40,18 +45,13 @@ csl : .install/git/modules/lib/styles/info/sparse-checkout
 		git checkout master && git pull && \
 		git read-tree -m -u HEAD
 
-submodule_init : template
+submodule_init :
 	# Generating a repo from a GitHub template breaks the submodules.
-	# As a workaround, we create a branch that clones directly from the
-	# template repo, activate the submodules there, then merge it into
-	# whatever branch was previously active (the master branch if your
-	# repo has just been initialized).
-	git checkout template
-	git pull
-	-git submodule init
-	git submodule update
-	git checkout -
-	git merge template --allow-unrelated-histories
+	# As a workaround, we init the submodules after cloning the template repo
+	# instead of including them in the source template.
+	git submodule add https://github.com/hakimel/reveal.js.git docs/reveal.js
+	git submodule add https://github.com/citation-style-language/styles.git lib/styles
+	git sumbodule add https://github.com/jgm/pandoc-templates.git lib/pandoc-templates
 
 template :
 	-git remote add template git@github.com:p3palazzo/research_template.git
