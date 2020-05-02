@@ -1,0 +1,56 @@
+---
+$if(title)$
+title: "$title$"
+$endif$
+$if(subtitle)$
+subtitle: "$subtitle$"
+$endif$
+$if(date)$
+date: $date$
+$endif$
+$if(author)$
+author:
+$for(author)$
+- name: $author.name$
+  affiliation: "$author.affiliation$"
+$endfor$
+$endif$
+$if(description)$
+description: |
+  $description$
+$endif$
+$if(abstract)$
+abstract: |
+  $abstract$
+$endif$
+$if(keywords)$
+keywords: [$for(keywords)$$keywords$$sep$, $endfor$]
+$endif$
+---
+
+$for(header-includes)$
+$header-includes$
+
+$endfor$
+$for(include-before)$
+$include-before$
+
+$endfor$
+$if(title)$
+# $title$
+
+$endif$
+$if(subtitle)$
+<p class="subtitle">$subtitle$</p>
+
+$endif$
+$if(toc)$
+$table-of-contents$
+
+$endif$
+$body$
+$for(include-after)$
+
+$include-after$
+$endfor$
+

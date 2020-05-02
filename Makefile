@@ -14,7 +14,6 @@ vpath default.% lib/pandoc-templates
 # .PHONY : build
 build :
 	bundle exec jekyll build
-	mv _site/* docs/
 
 # Install and cleanup {{{1
 # ===================
@@ -29,12 +28,8 @@ build :
 # - virtualenv: sets up a virtual environment (but you still need to activate
 #   it from the command line).
 .PHONY : install link-template makedirs submodule virtualenv bundle serve clean
-install : link-template makedirs submodule csl virtualenv bundle license
-	# If you reached this message, installation was successful, even if
-	# you see some errors above. Inspect them to see if there are any
-	# errors that affect the features of this template and, if this is
-	# the case, please report them by opening an issue at
-	# https://github.com/p3palazzo/research_template/issues/.
+install : link-template makedirs submodule csl virtualenv license
+	bundle install
 
 makedirs :
 	-mkdir _share && mkdir _book && mkdir fig
@@ -45,7 +40,12 @@ csl : .install/git/modules/lib/styles/info/sparse-checkout
 		git checkout master && git pull && \
 		git read-tree -m -u HEAD
 
-submodule_init : link-template
+submodule_init : template
+	# Generating a repo from a GitHub template breaks the submodules.
+	# As a workaround, we create a branch that clones directly from the
+	# template repo, activate the submodules there, then merge it into
+	# whatever branch was previously active (the master branch if your
+	# repo has just been initialized).
 	git checkout template
 	git pull
 	-git submodule init
@@ -53,37 +53,19 @@ submodule_init : link-template
 	git checkout -
 	git merge template --allow-unrelated-histories
 
-link-template :
-	# Generating a repo from a GitHub template breaks the submodules.
-	# As a workaround, we create a branch that clones directly from the
-	# template repo, activate the submodules there, then merge it into
-	# whatever branch was previously active (the master branch if your
-	# repo has just been initialized).
+template :
 	-git remote add template git@github.com:p3palazzo/research_template.git
 	git fetch template
 	git checkout -B template --track template/master
 	git checkout -
 
 virtualenv :
-	# Mac/Homebrew Python requires the recipe below to be instead:
-	# python3 -m virtualenv ...
-	# pip3 instal ...
 	python -m venv .venv && source .venv/bin/activate && \
 		pip install -r .install/requirements.txt
 	-rm -rf src
 
 bundle :
-	bundle config set path '.vendor/bundle'
-	# Remove the line above if you want to install gems system-wide.
-	# (This requires sudo)
-	# The config set path is effectively ignored by bundle in favor of
-	# the global path setting. My global config at ~/.bundle, however,
-	# is itself overridden by the built-in bundle path setting, which
-	# is `.vendor`. Can't seem to be able to change this in any way.
-	bundle install
-
-serve :
-	bundle exec jekyll serve
+	bundle update
 
 license :
 	source .venv/bin/activate && \
