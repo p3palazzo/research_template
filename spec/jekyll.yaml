@@ -1,0 +1,13 @@
+to        : markdown-citations-smart
+standalone: true
+wrap      : preserve
+filters:
+- pandoc-xnos
+- pandoc-citeproc
+fail-if-warnings        : true
+file-scope              : true
+email-obfuscation       : references
+resource-path:
+- .
+- fig
+- assets

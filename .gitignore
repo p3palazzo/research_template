@@ -13,12 +13,15 @@ _book
 # For when you want to keep downloaded or received files next to your
 # repo without committing them (bc they're usually binaries).
 _share
+fig
 
 # Jekyll {{{1
 _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+.vendor/
+.bundle/
 
 # eBook build output {{{1
 *.epub

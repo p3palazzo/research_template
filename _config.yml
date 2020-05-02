@@ -34,6 +34,9 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-github-metadata
+destination: docs
+keep_files:
+  - reveal.js
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -44,15 +47,21 @@ plugins:
 # their entries' file path in the `include:` list.
 #
 exclude:
-  - docs/reveal.js/
   - README.md
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+  - lib/
+  - spec/
+  - src/
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - Makefile
+  - .bundle/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - node_modules/
+  - .vendor/bundle/
+  - .vendor/cache/
+  - .vendor/gems/
+  - .vendor/ruby/
+  - .venv/
